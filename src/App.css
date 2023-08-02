@@ -1,38 +1,340 @@
-.App {
-  text-align: center;
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+    background-color:black;
+    overflow-x: hidden;
+
+}
+::-webkit-scrollbar{
+    display: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.center{
+    display: flex;
+    margin: 0 5%;
+    max-width: 1100px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.header{
+    background-color:black;
+    height: 100px;
+
 }
 
-.App-link {
-  color: #61dafb;
+
+
+.header__loginForm{
+
+    display: flex;
+    background-color: rgba(250, 249, 249, 1.0);
+    position:fixed;
+    width:100%;
+    height: 900px;
+
+}
+.quadro_form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+}
+.instagram_logo_black {
+    display: inline-block;
+    text-align: center;
+    background-image:url(image/instagram-black.png);
+    width: 200px;
+    height: 80px;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    margin-bottom: 20px;
+
+}
+.header__loginForm form{
+    text-align: center;
+    display: inline-block;
+    width: 30%;
+    padding: 80px 50px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__loginForm input[type=text],
+.header__loginForm input[type=password]{
+    border-radius: 8px;
+    padding: 20px 10px;
+    width:100%;
+    margin-right: 5px;
+    margin-bottom: 30px;
+    height:20px;
+    border:1px solid #ccc;
+    padding-left: 10px;
+}
+
+.header__loginForm input[type=submit]{
+    background-color: #0095f6;
+    color:white;
+    border:0;
+    height:20px;
+    padding:0px 10px;
+    cursor:pointer;
+    border-radius:10px;
+    font-size: 14px;
+}
+
+.btn__criarConta{
+    display: inline-block;
+
+}
+
+.btn__criarConta a{
+    font-size: 14px;
+    margin:0 10px;
+    text-decoration: none;
+    color: #2c2a2a;
+}
+
+.header__logadoInfo{
+    padding-top: 20px;
+    position:relative;
+    left: 25%;
+    text-align: right;
+    width:50%;
+}
+.foto-postar{
+    background-image: url(image/WhatsApp\ Image\ 2023-01-05\ at\ 21.44.39.jpeg);
+    background-size: contain;
+    background-size: 100%;
+    display: inline-block;
+    background-color: white;
+    width: 60px ;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.header__logadoInfo a{
+   
+    text-align: center;
+
+    margin:0 5px;
+    background-color: #525252;
+    color:white;
+    text-decoration: none;
+    padding:3px 10px;
+    cursor:pointer;
+    border-radius:10px;
+    position: relative;
+    top: 40px;
+    left: 20px;
+}
+
+
+.modalCriarConta{
+    display: none;
+    z-index: 20;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.formCriarConta{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background-color:white;
+    padding:20px;
+    width:80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.formCriarConta input{
+    width:100%;
+    height: 30px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    border:1px solid #ccc;
+}
+
+.formCriarConta input[type=submit]{
+    background-color: #0095f6;
+    cursor: pointer;
+    color:white;
+}
+
+.close-modal-criar{
+    position: absolute;
+    right:-10px;
+    top:-10px;
+    cursor: pointer;
+    width:30px;
+    text-align: center;
+    color:white;
+    line-height: 30px;
+    height:30px;
+    border-radius:15px;
+    background-color: #0095f6;
+}
+
+
+
+.modalUpload{
+    display: none;
+    position:fixed;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.formUpload{
+    position: absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    background-color:white;
+    padding:20px;
+    width:80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.formUpload input{
+    width:100%;
+    height: 30px;
+    margin-bottom:10px;
+    padding-left: 10px;
+    border:1px solid #ccc;
+}
+
+.formUpload input[type=submit]{
+    background-color: hsl(204, 100%, 48%);
+    cursor: pointer;
+    color:white;
+    border-radius: 8px;
+}
+
+.close-modal-criar{
+    position: absolute;
+    right:-10px;
+    top:-10px;
+    cursor: pointer;
+    width:30px;
+    text-align: center;
+    color:white;
+    line-height: 30px;
+    height:30px;
+    border-radius:15px;
+    background-color: #0095f6;
+}
+
+.postSingle{
+    padding-bottom:40px;
+    background-color:black;
+    max-width: 500px;
+    margin:10px auto;
+
+}
+
+.postSingle img{
+    width:100%;
+    
+}
+
+.postSingle p{
+    font-size: 18px;
+    padding:10px;
+    color: white;
+}
+.postSingle form{
+
+    padding:20px;}
+
+.postSingle textarea{
+    width:100%;
+    height:120px;
+    border:1px solid #ccc;
+    padding:10px;
+    background-color:black;
+    color:white;
+}
+
+
+.postSingle input[type=submit]{
+    background-color: #0095f6;
+    cursor: pointer;
+    color:white;
+    border:0;
+    padding:8px 10px;
+}
+
+.coments{
+    margin-left: 20px;
+    color: white;
+
+}
+
+.coments h2{
+    border-bottom:1px solid #4b4b4b;
+    padding:8px 0;
+    color: white;
+}
+
+.coment-single p{
+    font-size: 14px;
+}
+.instagram-menu{
+    width: 400px;
+    height: 60px;
+    background-color:black;
+    display: inline-block;    
+    background-image: url(image/instagram.png);
+    background-size: 150px;
+    background-repeat: no-repeat;
+    width:100%;
+    margin-bottom: 40px;
+}
+
+
+.menu-lateral{
+    padding-top: 2%;
+    border-right: 2px solid white;
+    color: white;
+    position:fixed;
+    text-decoration: none;   
+    padding-right: 10%;
+}
+
+.menu-lateral a{
+
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+
+.menu-lateral li{
+    font-size: 22px;
+    margin-bottom: 45px;
+    list-style-type:none;
+
+}
+
+.postSingleReact{
+margin-top: 20px;
+}
+
+.click-likes{
+    background-color: red;
+    color:#0095f6
 }
